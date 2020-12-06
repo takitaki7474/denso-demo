@@ -3,6 +3,7 @@
 
 data/
 assets/
+models/
 
 __pycache__/
 .DS_Store
