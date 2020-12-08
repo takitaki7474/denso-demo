@@ -25,12 +25,14 @@ if __name__=="__main__":
     print("learning rate: {0}\n".format(args.lr))
 
     # 訓練データの生成
-    train = preprocess.load_dataset(dataset_dir=TRAIN_DIR, imsize=(32,32))
+    train = preprocess.load_dataset(dataset_dir=TRAIN_DIR, dataN=args.dataN, imsize=(32,32))
     trainloader = torch.utils.data.DataLoader(train, batch_size=args.batch_size, shuffle=True, num_workers=2)
+    print("number of train data: {0}".format(len(train)))
 
     # テストデータの生成
-    test = preprocess.load_dataset(dataset_dir=TEST_DIR, imsize=(32,32))
+    test = preprocess.load_dataset(dataset_dir=TEST_DIR, dataN=args.dataN//4, imsize=(32,32))
     testloader = torch.utils.data.DataLoader(test, batch_size=args.batch_size, shuffle=True, num_workers=2)
+    print("number of train data: {0}".format(len(test)))
 
     # 学習と評価
     model = net.LeNet(2)
