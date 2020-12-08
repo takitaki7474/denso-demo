@@ -31,5 +31,6 @@ if __name__=="__main__":
 
     # 誤ったデータの出力
     print("\nfailures / total:   {0} / {1}\n".format(len(failures), len(val)))
+    print("failure data:")
     for failure in failures:
         print(failure)
